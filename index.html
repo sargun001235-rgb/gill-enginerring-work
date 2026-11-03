@@ -61,6 +61,7 @@
         <a href="#services" class="nav-link">Services</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#work" class="nav-link">Our Work</a>
+        <a href="#estimator" class="nav-link">Estimator</a>
         <a href="#testimonials" class="nav-link">Reviews</a>
         <a href="#contact" class="nav-link">Contact</a>
         <a href="https://www.linkedin.com/in/kiranbir-singh-gill-395b71111" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-li" title="Kiranbir Singh Gill on LinkedIn">
@@ -93,6 +94,7 @@
       <a href="#services" class="mob-link">Services</a>
       <a href="#about" class="mob-link">About</a>
       <a href="#work" class="mob-link">Our Work</a>
+      <a href="#estimator" class="mob-link">Estimator</a>
       <a href="#testimonials" class="mob-link">Reviews</a>
       <a href="#contact" class="mob-link">Contact</a>
       <a href="https://www.linkedin.com/in/kiranbir-singh-gill-395b71111" target="_blank" rel="noopener noreferrer" class="mob-link mob-link-li">
@@ -119,7 +121,10 @@
   <div class="hero-overlay"></div>
   <div class="hero-arc-glow"></div>
 
-  <!-- Animated sparks -->
+  <!-- Interactive Welding Arc & Particle Physics Canvas -->
+  <canvas id="hero-spark-canvas" class="hero-spark-canvas" aria-label="Interactive welding spark physics canvas"></canvas>
+
+  <!-- Animated sparks fallback -->
   <div class="sparks" aria-hidden="true">
     <div class="spark s1"></div><div class="spark s2"></div>
     <div class="spark s3"></div><div class="spark s4"></div>
@@ -129,9 +134,15 @@
   </div>
 
   <div class="hero-content container">
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      Melbourne &amp; Sunbury, VIC — Serving All of Australia
+    <div class="hero-badge-wrap">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Melbourne &amp; Sunbury, VIC — Serving All of Australia
+      </div>
+      <div class="hero-spark-tip" id="hero-spark-tip">
+        <span class="spark-torch-icon">⚡</span>
+        <span>Touch or move cursor to strike welding sparks</span>
+      </div>
     </div>
     
     <h1 class="hero-title">
@@ -150,7 +161,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.15 0-.38.05-.58.28-.2.22-.76.74-.76 1.8 0 1.07.78 2.1 1.09 2.29.11.08 1.54 2.35 3.73 3.3.52.23.93.36 1.25.46.52.17 1 .14 1.38.09.42-.06 1.3-.53 1.48-1.04.19-.52.19-.96.13-1.05-.06-.09-.22-.15-.46-.27-.24-.11-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42l-.47-.01z"/></svg>
         Chat on WhatsApp
       </a>
-      <a href="#contact" class="btn btn-outline-hero" id="hero-quote-btn">Get a Free Quote</a>
+      <a href="#estimator" class="btn btn-outline-hero" id="hero-quote-btn">Scope Estimator</a>
     </div>
 
     <!-- Quick Contact & Hours Strip -->
@@ -170,13 +181,13 @@
     </div>
 
     <div class="hero-stats">
-      <div class="stat-item"><span class="stat-num" data-target="10" data-suffix="+">10+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat-item"><span class="stat-num" data-target="12" data-suffix="+">12+</span><span class="stat-label">Years Experience</span></div>
       <div class="stat-div"></div>
       <div class="stat-item"><span class="stat-num" data-target="100" data-suffix="%">100%</span><span class="stat-label">Client Satisfaction</span></div>
       <div class="stat-div"></div>
       <div class="stat-item"><span class="stat-num" data-target="5" data-suffix="+">5+</span><span class="stat-label">Skilled Tradespeople</span></div>
       <div class="stat-div"></div>
-      <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-label">Emergency Response</span></div>
+      <div class="stat-item stat-item-highlight"><span class="stat-num stat-247">24/7</span><span class="stat-label">Emergency Response</span></div>
     </div>
   </div>
 
@@ -206,7 +217,7 @@
       <div class="trust-sep"></div>
       <div class="trust-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Affordable &amp; Competitive Pricing
+        High-Quality ISO Standard Steel
       </div>
       <div class="trust-sep"></div>
       <div class="trust-item">
@@ -246,11 +257,11 @@
       <div class="service-card reveal" id="svc-welding">
         <div class="svc-icon-wrap">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#fb923c" fill-opacity="0.12"/>
-            <path d="M14 34L25 23M25 23L28 20C29.1 18.9 30.9 18.9 32 20L33 21C34.1 22.1 34.1 23.9 33 25L30 28L25 23Z" stroke="#fb923c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 36L16 32" stroke="#ea580c" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M32 15L34 12M37 18L41 17M36 23L40 25M28 12L27 9" stroke="#fcd34d" stroke-width="1.8" stroke-linecap="round"/>
-            <circle cx="34" cy="15" r="1.5" fill="#fcd34d"/>
+            <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
+            <path d="M14 34L25 23M25 23L28 20C29.1 18.9 30.9 18.9 32 20L33 21C34.1 22.1 34.1 23.9 33 25L30 28L25 23Z" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 36L16 32" stroke="#0284c7" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M32 15L34 12M37 18L41 17M36 23L40 25M28 12L27 9" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="34" cy="15" r="1.5" fill="#38bdf8"/>
           </svg>
         </div>
         <h3>Welding &amp; Steel Fabrication</h3>
@@ -262,16 +273,16 @@
         <div class="svc-badge">Most Popular</div>
         <div class="svc-icon-wrap">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#fb923c" fill-opacity="0.18"/>
-            <rect x="7" y="18" width="30" height="10" rx="1.5" stroke="#fb923c" stroke-width="2"/>
-            <path d="M37 23H42L44 28H37" stroke="#fb923c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="16" cy="33" r="4" stroke="#fb923c" stroke-width="2"/>
-            <circle cx="16" cy="33" r="1.5" fill="#fb923c"/>
-            <circle cx="28" cy="33" r="4" stroke="#fb923c" stroke-width="2"/>
-            <circle cx="28" cy="33" r="1.5" fill="#fb923c"/>
-            <line x1="12" y1="20" x2="15" y2="26" stroke="#ea580c" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="19" y1="20" x2="22" y2="26" stroke="#ea580c" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="26" y1="20" x2="29" y2="26" stroke="#ea580c" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.18"/>
+            <rect x="7" y="18" width="30" height="10" rx="1.5" stroke="#2563eb" stroke-width="2"/>
+            <path d="M37 23H42L44 28H37" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="16" cy="33" r="4" stroke="#2563eb" stroke-width="2"/>
+            <circle cx="16" cy="33" r="1.5" fill="#2563eb"/>
+            <circle cx="28" cy="33" r="4" stroke="#2563eb" stroke-width="2"/>
+            <circle cx="28" cy="33" r="1.5" fill="#2563eb"/>
+            <line x1="12" y1="20" x2="15" y2="26" stroke="#0284c7" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="19" y1="20" x2="22" y2="26" stroke="#0284c7" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="26" y1="20" x2="29" y2="26" stroke="#0284c7" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
         <h3>Trailer Floor &amp; Body Repair</h3>
@@ -282,17 +293,17 @@
       <div class="service-card reveal" id="svc-machinery">
         <div class="svc-icon-wrap">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#fb923c" fill-opacity="0.12"/>
-            <path d="M11 31L19 16L27 23L23 31H11Z" stroke="#fb923c" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M27 23L38 20L34 31L23 31" stroke="#fb923c" stroke-width="2" stroke-linejoin="round"/>
-            <line x1="38" y1="25" x2="42" y2="27" stroke="#fb923c" stroke-width="2" stroke-linecap="round"/>
-            <line x1="36" y1="30" x2="40" y2="32" stroke="#fb923c" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="19" cy="16" r="2" fill="#fb923c"/>
-            <circle cx="27" cy="23" r="1.8" fill="#fb923c"/>
-            <line x1="11" y1="36" x2="35" y2="36" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
-            <line x1="15" y1="36" x2="15" y2="39" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="23" y1="36" x2="23" y2="39" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="31" y1="36" x2="31" y2="39" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
+            <path d="M11 31L19 16L27 23L23 31H11Z" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M27 23L38 20L34 31L23 31" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+            <line x1="38" y1="25" x2="42" y2="27" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+            <line x1="36" y1="30" x2="40" y2="32" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="19" cy="16" r="2" fill="#2563eb"/>
+            <circle cx="27" cy="23" r="1.8" fill="#2563eb"/>
+            <line x1="11" y1="36" x2="35" y2="36" stroke="#0284c7" stroke-width="2" stroke-linecap="round"/>
+            <line x1="15" y1="36" x2="15" y2="39" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="23" y1="36" x2="23" y2="39" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="31" y1="36" x2="31" y2="39" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
         </div>
         <h3>Earthwork Machinery Repair</h3>
@@ -303,12 +314,12 @@
       <div class="service-card reveal" id="svc-residential">
         <div class="svc-icon-wrap">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#fb923c" fill-opacity="0.12"/>
-            <path d="M12 36V14M36 36V14" stroke="#fb923c" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M10 14H38M10 36H38" stroke="#fb923c" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M12 14L24 25L36 14" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 36L24 25L36 36" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="24" cy="25" r="2" fill="#fcd34d"/>
+            <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
+            <path d="M12 36V14M36 36V14" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M10 14H38M10 36H38" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M12 14L24 25L36 14" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 36L24 25L36 36" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="24" cy="25" r="2" fill="#38bdf8"/>
           </svg>
         </div>
         <h3>Residential &amp; Commercial Steel</h3>
@@ -319,13 +330,13 @@
       <div class="service-card reveal" id="svc-fabrication">
         <div class="svc-icon-wrap">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#fb923c" fill-opacity="0.12"/>
-            <circle cx="24" cy="13" r="3" stroke="#fb923c" stroke-width="2"/>
-            <path d="M21.5 15.5L13 36M26.5 15.5L35 36" stroke="#fb923c" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M17 27C21 28.5 27 28.5 31 27" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="24" y1="25" x2="24" y2="29" stroke="#fcd34d" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="12" y1="36" x2="15" y2="36" stroke="#fb923c" stroke-width="2" stroke-linecap="round"/>
-            <line x1="33" y1="36" x2="36" y2="36" stroke="#fb923c" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
+            <circle cx="24" cy="13" r="3" stroke="#2563eb" stroke-width="2"/>
+            <path d="M21.5 15.5L13 36M26.5 15.5L35 36" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M17 27C21 28.5 27 28.5 31 27" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="24" y1="25" x2="24" y2="29" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="12" y1="36" x2="15" y2="36" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+            <line x1="33" y1="36" x2="36" y2="36" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
         <h3>Custom Fabrication</h3>
@@ -336,16 +347,16 @@
       <div class="service-card reveal" id="svc-truck">
         <div class="svc-icon-wrap">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#fb923c" fill-opacity="0.12"/>
-            <path d="M6 16H27V30H6V16Z" stroke="#fb923c" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M27 20H37L42 25V30H27V20Z" stroke="#fb923c" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M33 20L37 25H27" stroke="#fb923c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="11" cy="34" r="3.5" stroke="#fb923c" stroke-width="1.8"/>
-            <circle cx="11" cy="34" r="1" fill="#fb923c"/>
-            <circle cx="21" cy="34" r="3.5" stroke="#fb923c" stroke-width="1.8"/>
-            <circle cx="21" cy="34" r="1" fill="#fb923c"/>
-            <circle cx="36" cy="34" r="3.5" stroke="#fb923c" stroke-width="1.8"/>
-            <circle cx="36" cy="34" r="1" fill="#fb923c"/>
+            <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
+            <path d="M6 16H27V30H6V16Z" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M27 20H37L42 25V30H27V20Z" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M33 20L37 25H27" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="11" cy="34" r="3.5" stroke="#2563eb" stroke-width="1.8"/>
+            <circle cx="11" cy="34" r="1" fill="#2563eb"/>
+            <circle cx="21" cy="34" r="3.5" stroke="#2563eb" stroke-width="1.8"/>
+            <circle cx="21" cy="34" r="1" fill="#2563eb"/>
+            <circle cx="36" cy="34" r="3.5" stroke="#2563eb" stroke-width="1.8"/>
+            <circle cx="36" cy="34" r="1" fill="#2563eb"/>
           </svg>
         </div>
         <h3>Truck &amp; Trailer Body Repair</h3>
@@ -364,7 +375,7 @@
       <div class="about-img-frame">
         <img src="hero_welding_bg.jpg" alt="Gill Engineering Works skilled welder at work" class="about-img" loading="lazy" />
         <div class="about-exp-badge">
-          <span class="exp-num">10<sup>+</sup></span>
+          <span class="exp-num">12<sup>+</sup></span>
           <span class="exp-label">Years of<br>Experience</span>
         </div>
         <div class="about-img-decor"></div>
@@ -468,9 +479,9 @@
 
       <div class="why-card reveal">
         <div class="why-icon-wrap">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/><path d="M12 14v4M10 16l4-2"/></svg>
         </div>
-        <p>Affordable &amp; Competitive Pricing</p>
+        <p>High-Quality ISO Standard Steel</p>
       </div>
 
       <div class="why-card reveal">
@@ -539,6 +550,87 @@
         <div class="work-img-wrap"><img src="https://www.gillengineeringworks.com.au/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-12-at-6.02.02-PM.jpeg" alt="Steel handrail design" loading="lazy" class="work-img"/><div class="work-overlay"><span>Steel Handrail Design</span></div></div>
       </div>
     </div>
+
+    <!-- ── Interactive Before & After Restoration Showcase ── -->
+    <div class="ba-showcase reveal" id="ba-showcase">
+      <div class="ba-header">
+        <div class="ba-badge-pill">
+          <span class="ba-pulse-dot"></span>
+          Interactive Inspection Slider
+        </div>
+        <h3 class="ba-title">Precision Restoration: Before &amp; After</h3>
+        <p class="ba-subtitle">Drag the laser seam slider left &amp; right to compare structural damage vs. our AS/NZS certified rebuilt chassis</p>
+      </div>
+
+      <div class="ba-interactive-wrapper">
+        <div class="ba-container" id="ba-container">
+          <!-- Underneath: After Image (Rebuilt) -->
+          <div class="ba-layer ba-after-layer">
+            <img src="https://www.gillengineeringworks.com.au/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-12-at-6.10.00-PM.jpeg" alt="Restored Trailer Bumper - After" draggable="false" />
+            <div class="ba-tag ba-tag-after">
+              <span class="ba-tag-icon">✓</span>
+              <span>AFTER: AS/NZS Certified ISO Weld</span>
+            </div>
+          </div>
+
+          <!-- Top Overlay: Before Image (Damaged) -->
+          <div class="ba-layer ba-before-layer" id="ba-before-layer">
+            <img src="https://www.gillengineeringworks.com.au/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-12-at-6.10.00-PM-1.jpeg" alt="Damaged Trailer Body - Before" draggable="false" />
+            <div class="ba-tag ba-tag-before">
+              <span class="ba-tag-icon">⚠️</span>
+              <span>BEFORE: Heavy Fracture &amp; Stress Fatigue</span>
+            </div>
+          </div>
+
+          <!-- Drag Seam Divider with Arc Laser Beam -->
+          <div class="ba-handle-line" id="ba-handle-line">
+            <div class="ba-laser-beam"></div>
+            <div class="ba-handle-btn" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+                <polyline points="9 18 15 12 9 6" transform="rotate(180 12 12)"/>
+              </svg>
+            </div>
+            <div class="ba-arc-spark-point"></div>
+          </div>
+
+          <!-- Accessible Range Input for Touch & Drag -->
+          <input type="range" min="0" max="100" value="50" class="ba-slider" id="ba-slider" aria-label="Before and After comparison slider" />
+        </div>
+
+        <!-- Quick View Preset Buttons -->
+        <div class="ba-quick-actions">
+          <button type="button" class="ba-action-btn" id="ba-btn-before">View Before (Fractured)</button>
+          <button type="button" class="ba-action-btn active" id="ba-btn-split">50 / 50 Comparison</button>
+          <button type="button" class="ba-action-btn" id="ba-btn-after">View After (Rebuilt)</button>
+        </div>
+      </div>
+
+      <!-- Restoration Technical Highlights -->
+      <div class="ba-highlights-grid">
+        <div class="ba-hl-card">
+          <div class="ba-hl-num">01</div>
+          <div class="ba-hl-info">
+            <h4>Crack Arrest &amp; V-Groove Prep</h4>
+            <p>Full excavation of stress fatigue fractures to sound base metal before weld deposit.</p>
+          </div>
+        </div>
+        <div class="ba-hl-card">
+          <div class="ba-hl-num">02</div>
+          <div class="ba-hl-info">
+            <h4>ISO Standard High-Yield Steel</h4>
+            <p>Gusset plates &amp; structural flange reinforcements crafted with certified Australian grade steel.</p>
+          </div>
+        </div>
+        <div class="ba-hl-card">
+          <div class="ba-hl-num">03</div>
+          <div class="ba-hl-info">
+            <h4>Zero Recurrent Failure Guarantee</h4>
+            <p>"We do it once, and we do it right" — 100% weld penetration tested for heavy haulage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -590,6 +682,161 @@
         <button class="testi-btn" id="testi-next" aria-label="Next">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ PROJECT SCOPE & INSTANT WHATSAPP ESTIMATOR ═══════════════════════════ -->
+<section class="section estimator-section" id="estimator">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Smart Estimator</p>
+      <h2 class="section-title">Configure Your Steel Project in 60 Seconds</h2>
+      <p class="section-desc">Select your requirements below to instantly generate engineering specifications and dispatch directly to Kiranbir's WhatsApp.</p>
+    </div>
+
+    <div class="estimator-card reveal">
+      <div class="estimator-steps">
+        <!-- Step 1 -->
+        <div class="estimator-step-block">
+          <div class="est-step-header">
+            <span class="est-step-num">1</span>
+            <div>
+              <h4 class="est-step-title">Select Service Category</h4>
+              <p class="est-step-desc">What type of steel or welding work do you need?</p>
+            </div>
+          </div>
+          <div class="est-options-grid" data-group="service">
+            <button type="button" class="est-opt-btn active" data-val="Trailer Floor &amp; Body Repair" data-icon="🚛">
+              <span class="est-opt-icon">🚛</span>
+              <span class="est-opt-title">Trailer Floor &amp; Body</span>
+              <span class="est-opt-desc">Chassis, floor replating, bumper rebuild</span>
+            </button>
+            <button type="button" class="est-opt-btn" data-val="Heavy Machinery Welding" data-icon="🚜">
+              <span class="est-opt-icon">🚜</span>
+              <span class="est-opt-title">Heavy Machinery Repair</span>
+              <span class="est-opt-desc">Buckets, booms, skid plate replacement</span>
+            </button>
+            <button type="button" class="est-opt-btn" data-val="Custom Steel Fabrication" data-icon="⚙️">
+              <span class="est-opt-icon">⚙️</span>
+              <span class="est-opt-title">Custom Steel Fabrication</span>
+              <span class="est-opt-desc">ISO certified structural fabrication</span>
+            </button>
+            <button type="button" class="est-opt-btn" data-val="Handrails &amp; Architectural Steel" data-icon="🏢">
+              <span class="est-opt-icon">🏢</span>
+              <span class="est-opt-title">Handrails &amp; Balustrades</span>
+              <span class="est-opt-desc">Stainless steel, culvert grills, gates</span>
+            </button>
+            <button type="button" class="est-opt-btn" data-val="Mobile On-Site Emergency Welding" data-icon="⚡">
+              <span class="est-opt-icon">⚡</span>
+              <span class="est-opt-title">Mobile On-Site Welding</span>
+              <span class="est-opt-desc">24/7 Melbourne &amp; Sunbury dispatch</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="estimator-step-block">
+          <div class="est-step-header">
+            <span class="est-step-num">2</span>
+            <div>
+              <h4 class="est-step-title">Project Scope &amp; Scale</h4>
+              <p class="est-step-desc">How extensive is the required work?</p>
+            </div>
+          </div>
+          <div class="est-options-grid cols-3" data-group="scale">
+            <button type="button" class="est-opt-btn active" data-val="Minor Repair / Single Component" data-turnaround="Same-Day or 24-48 Hours">
+              <span class="est-scale-tag tag-rapid">Rapid Turnaround</span>
+              <span class="est-opt-title">Minor Repair / Weld</span>
+              <span class="est-opt-desc">Crack repair, bracket, single reinforcement</span>
+            </button>
+            <button type="button" class="est-opt-btn" data-val="Commercial Rebuild / Assembly" data-turnaround="2 to 4 Working Days">
+              <span class="est-scale-tag tag-standard">Workshop Standard</span>
+              <span class="est-opt-title">Commercial Rebuild</span>
+              <span class="est-opt-desc">Trailer floor re-skin, machinery boom repair</span>
+            </button>
+            <button type="button" class="est-opt-btn" data-val="Industrial Heavy Fabrication" data-turnaround="Priority Scheduled Milestone">
+              <span class="est-scale-tag tag-major">Major Project</span>
+              <span class="est-opt-title">Heavy Industrial</span>
+              <span class="est-opt-desc">Full trailer frame, fleet contracts, structural fitout</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="estimator-step-block">
+          <div class="est-step-header">
+            <span class="est-step-num">3</span>
+            <div>
+              <h4 class="est-step-title">Urgency &amp; Schedule</h4>
+              <p class="est-step-desc">When do you need the team on it?</p>
+            </div>
+          </div>
+          <div class="est-options-grid cols-3" data-group="urgency">
+            <button type="button" class="est-opt-btn" data-val="24/7 Emergency Dispatch" data-badge="Priority Dispatch">
+              <span class="est-urgency-dot emergency"></span>
+              <span class="est-opt-title">🚨 24/7 Emergency</span>
+              <span class="est-opt-desc">Immediate dispatch &amp; breakdown repair</span>
+            </button>
+            <button type="button" class="est-opt-btn active" data-val="Urgent (24–48 Hours)" data-badge="Fast Track">
+              <span class="est-urgency-dot fast"></span>
+              <span class="est-opt-title">⚡ Urgent (24–48 hrs)</span>
+              <span class="est-opt-desc">Fast-tracked workshop slot booked</span>
+            </button>
+            <button type="button" class="est-opt-btn" data-val="Standard Schedule (Next 1–2 Weeks)" data-badge="Flexible">
+              <span class="est-urgency-dot normal"></span>
+              <span class="est-opt-title">📅 Standard Schedule</span>
+              <span class="est-opt-desc">Flexible consultation &amp; quote</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Scope Output Card & Direct WhatsApp Dispatch -->
+      <div class="estimator-summary-panel">
+        <div class="est-summary-card">
+          <div class="est-summary-top">
+            <span class="est-summary-pill">Live Engineering Scope</span>
+            <span class="est-summary-verified">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              High-Quality ISO Standard Steel
+            </span>
+          </div>
+
+          <div class="est-summary-details">
+            <div class="est-detail-row">
+              <span class="est-row-label">Category:</span>
+              <span class="est-row-val" id="summary-service">Trailer Floor &amp; Body Repair</span>
+            </div>
+            <div class="est-detail-row">
+              <span class="est-row-label">Scope Scale:</span>
+              <span class="est-row-val" id="summary-scale">Minor Repair / Single Component</span>
+            </div>
+            <div class="est-detail-row">
+              <span class="est-row-label">Turnaround Target:</span>
+              <span class="est-row-val" id="summary-turnaround">Same-Day or 24-48 Hours</span>
+            </div>
+            <div class="est-detail-row">
+              <span class="est-row-label">Priority:</span>
+              <span class="est-row-val est-urgency-badge" id="summary-urgency">⚡ Urgent (24–48 hrs)</span>
+            </div>
+          </div>
+
+          <div class="est-summary-cta">
+            <a href="https://wa.me/61432072008" id="est-wa-send-btn" class="btn btn-whatsapp est-btn-wa" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.15 0-.38.05-.58.28-.2.22-.76.74-.76 1.8 0 1.07.78 2.1 1.09 2.29.11.08 1.54 2.35 3.73 3.3.52.23.93.36 1.25.46.52.17 1 .14 1.38.09.42-.06 1.3-.53 1.48-1.04.19-.52.19-.96.13-1.05-.06-.09-.22-.15-.46-.27-.24-.11-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42l-.47-.01z"/></svg>
+              <span>Dispatch Scope to WhatsApp</span>
+            </a>
+            <div class="est-direct-call">
+              <span class="est-call-label">Or call Kiranbir:</span>
+              <a href="tel:+61432072008" class="est-call-number">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
+                <span>+61 432 072 008</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
