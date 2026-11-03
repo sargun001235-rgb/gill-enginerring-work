@@ -17,46 +17,99 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
-<header class="nav-header" id="site-header">
-  <div class="nav-inner container">
-    <a href="#hero" class="nav-logo">
-      <div class="logo-icon-wrap">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+<!-- ═══════════════════════════ NAV & TOP BAR ═══════════════════════════ -->
+<header class="site-header" id="site-header">
+  <!-- Top Utility Bar: Opening Hours, Email, WhatsApp & LinkedIn -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span class="tb-item tb-hours">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="tb-label">Opening Hours:</span>
+          <strong>Mon – Sun: 7:00 AM – 7:00 PM</strong>
+        </span>
+        <a href="mailto:gillengineeringlimited@gmail.com" class="tb-item tb-link tb-email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>gillengineeringlimited@gmail.com</span>
+        </a>
       </div>
-      <div class="logo-text">
-        <span class="logo-name">Gill Engineering</span>
-        <span class="logo-sub">Works</span>
+      <div class="top-bar-right">
+        <a href="https://wa.me/61432072008" target="_blank" rel="noopener noreferrer" class="tb-item tb-link tb-wa" title="Chat on WhatsApp (+61 432 072 008)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.15 0-.38.05-.58.28-.2.22-.76.74-.76 1.8 0 1.07.78 2.1 1.09 2.29.11.08 1.54 2.35 3.73 3.3.52.23.93.36 1.25.46.52.17 1 .14 1.38.09.42-.06 1.3-.53 1.48-1.04.19-.52.19-.96.13-1.05-.06-.09-.22-.15-.46-.27-.24-.11-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42l-.47-.01z"/></svg>
+          <span>WhatsApp: +61 432 072 008</span>
+        </a>
+        <a href="https://www.linkedin.com/in/kiranbir-singh-gill-395b71111" target="_blank" rel="noopener noreferrer" class="tb-item tb-link tb-li" title="Connect with Kiranbir Singh Gill on LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.88c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63z"/></svg>
+          <span>LinkedIn</span>
+        </a>
       </div>
-    </a>
-
-    <nav class="nav-links" id="nav-links">
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#work" class="nav-link">Our Work</a>
-      <a href="#testimonials" class="nav-link">Reviews</a>
-      <a href="#contact" class="nav-link">Contact</a>
-      <a href="tel:+61432072008" class="nav-cta" id="nav-call-btn">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
-        +61 432 072 008
-      </a>
-    </nav>
-
-    <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    </div>
   </div>
 
-  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
-    <a href="#services" class="mob-link">Services</a>
-    <a href="#about" class="mob-link">About</a>
-    <a href="#work" class="mob-link">Our Work</a>
-    <a href="#testimonials" class="mob-link">Reviews</a>
-    <a href="#contact" class="mob-link">Contact</a>
-    <a href="tel:+61432072008" class="mob-cta" id="mob-call-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
-      Call Now — +61 432 072 008
-    </a>
+  <!-- Main Navbar -->
+  <div class="nav-header">
+    <div class="nav-inner container">
+      <a href="#hero" class="nav-logo" aria-label="Gill Engineering Works Home">
+        <img src="logo.png" alt="Gill Engineering Works Logo" class="nav-logo-img" />
+        <div class="logo-text">
+          <span class="logo-name">Gill Engineering</span>
+          <span class="logo-sub">Works</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#work" class="nav-link">Our Work</a>
+        <a href="#testimonials" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="https://www.linkedin.com/in/kiranbir-singh-gill-395b71111" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-li" title="Kiranbir Singh Gill on LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.88c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="tel:+61432072008" class="nav-cta" id="nav-call-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
+          +61 432 072 008
+        </a>
+      </nav>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mob-info-card">
+        <div class="mob-info-row">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span><strong>Hours:</strong> Mon – Sun: 7:00 AM – 7:00 PM</span>
+        </div>
+        <div class="mob-info-row">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:gillengineeringlimited@gmail.com">gillengineeringlimited@gmail.com</a>
+        </div>
+      </div>
+      <a href="#services" class="mob-link">Services</a>
+      <a href="#about" class="mob-link">About</a>
+      <a href="#work" class="mob-link">Our Work</a>
+      <a href="#testimonials" class="mob-link">Reviews</a>
+      <a href="#contact" class="mob-link">Contact</a>
+      <a href="https://www.linkedin.com/in/kiranbir-singh-gill-395b71111" target="_blank" rel="noopener noreferrer" class="mob-link mob-link-li">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.88c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63z"/></svg>
+        Connect on LinkedIn (Kiranbir)
+      </a>
+      <div class="mob-btn-group">
+        <a href="https://wa.me/61432072008" target="_blank" rel="noopener noreferrer" class="mob-cta mob-wa" id="mob-wa-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.15 0-.38.05-.58.28-.2.22-.76.74-.76 1.8 0 1.07.78 2.1 1.09 2.29.11.08 1.54 2.35 3.73 3.3.52.23.93.36 1.25.46.52.17 1 .14 1.38.09.42-.06 1.3-.53 1.48-1.04.19-.52.19-.96.13-1.05-.06-.09-.22-.15-.46-.27-.24-.11-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42l-.47-.01z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <a href="tel:+61432072008" class="mob-cta mob-call" id="mob-call-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
+          Call +61 432 072 008
+        </a>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -64,6 +117,7 @@
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
+  <div class="hero-arc-glow"></div>
 
   <!-- Animated sparks -->
   <div class="sparks" aria-hidden="true">
@@ -71,6 +125,7 @@
     <div class="spark s3"></div><div class="spark s4"></div>
     <div class="spark s5"></div><div class="spark s6"></div>
     <div class="spark s7"></div><div class="spark s8"></div>
+    <div class="spark s9"></div><div class="spark s10"></div>
   </div>
 
   <div class="hero-content container">
@@ -78,18 +133,42 @@
       <span class="badge-dot"></span>
       Melbourne &amp; Sunbury, VIC — Serving All of Australia
     </div>
+    
     <h1 class="hero-title">
       <span class="title-line">Strength in Steel,</span>
-      <span class="title-accent">Expertise in Repair.</span>
+      <span class="title-accent">We Do It Once, And We Do It Right.</span>
     </h1>
-    <p class="hero-sub">Premium welding, steel fabrication &amp; heavy machinery repair — precision-crafted for residential, commercial &amp; industrial clients across Melbourne and Sunbury VIC.</p>
+
+    <p class="hero-sub">Premium welding, custom steel fabrication &amp; heavy machinery repair — precision-crafted for residential, commercial &amp; industrial clients across Melbourne and Sunbury VIC.</p>
+    
     <div class="hero-actions">
-      <a href="tel:+61432072008" class="btn btn-primary" id="hero-call-btn">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
+      <a href="tel:+61432072008" class="btn btn-primary btn-hero-call" id="hero-call-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
         Call +61 432 072 008
       </a>
-      <a href="#contact" class="btn btn-outline" id="hero-quote-btn">Get a Free Quote</a>
+      <a href="https://wa.me/61432072008" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" id="hero-wa-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.15 0-.38.05-.58.28-.2.22-.76.74-.76 1.8 0 1.07.78 2.1 1.09 2.29.11.08 1.54 2.35 3.73 3.3.52.23.93.36 1.25.46.52.17 1 .14 1.38.09.42-.06 1.3-.53 1.48-1.04.19-.52.19-.96.13-1.05-.06-.09-.22-.15-.46-.27-.24-.11-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42l-.47-.01z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a href="#contact" class="btn btn-outline-hero" id="hero-quote-btn">Get a Free Quote</a>
     </div>
+
+    <!-- Quick Contact & Hours Strip -->
+    <div class="hero-info-bar">
+      <div class="hero-info-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span><strong>Mon – Sun:</strong> 7:00 AM – 7:00 PM</span>
+      </div>
+      <div class="hero-info-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:gillengineeringlimited@gmail.com">gillengineeringlimited@gmail.com</a>
+      </div>
+      <div class="hero-info-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.88c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63z"/></svg>
+        <a href="https://www.linkedin.com/in/kiranbir-singh-gill-395b71111" target="_blank" rel="noopener noreferrer">Kiranbir Singh Gill</a>
+      </div>
+    </div>
+
     <div class="hero-stats">
       <div class="stat-item"><span class="stat-num" data-target="10" data-suffix="+">10+</span><span class="stat-label">Years Experience</span></div>
       <div class="stat-div"></div>
@@ -316,10 +395,32 @@
           <div><strong>Client Satisfaction</strong><p>We work closely with you to exceed expectations every time.</p></div>
         </div>
       </div>
+
+      <!-- Founder & Director Spotlight with LinkedIn -->
+      <div class="founder-card">
+        <div class="founder-card-inner">
+          <div class="founder-avatar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="founder-meta">
+            <h4 class="founder-name">Kiranbir Singh Gill</h4>
+            <span class="founder-role">Director &amp; Engineering Specialist</span>
+          </div>
+          <a href="https://www.linkedin.com/in/kiranbir-singh-gill-395b71111" target="_blank" rel="noopener noreferrer" class="btn-founder-li" title="Connect with Kiranbir Singh Gill on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.88c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63z"/></svg>
+            <span>LinkedIn Profile</span>
+          </a>
+        </div>
+      </div>
+
       <div class="about-ctas">
         <a href="tel:+61432072008" class="btn btn-primary" id="about-call-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
-          Call Now
+          Call +61 432 072 008
+        </a>
+        <a href="https://wa.me/61432072008" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" id="about-wa-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.15 0-.38.05-.58.28-.2.22-.76.74-.76 1.8 0 1.07.78 2.1 1.09 2.29.11.08 1.54 2.35 3.73 3.3.52.23.93.36 1.25.46.52.17 1 .14 1.38.09.42-.06 1.3-.53 1.48-1.04.19-.52.19-.96.13-1.05-.06-.09-.22-.15-.46-.27-.24-.11-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42l-.47-.01z"/></svg>
+          Chat WhatsApp
         </a>
         <a href="#contact" class="btn btn-ghost" id="about-quote-btn">Free Quote</a>
       </div>
@@ -506,23 +607,40 @@
           <div class="ci-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
           </div>
-          <div><span class="ci-label">Phone</span><span class="ci-val">+61 432 072 008</span></div>
+          <div><span class="ci-label">Phone (Call Directly)</span><span class="ci-val">+61 432 072 008</span></div>
         </a>
-        <div class="contact-item">
-          <div class="ci-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+
+        <a href="https://wa.me/61432072008" target="_blank" rel="noopener noreferrer" class="contact-item contact-wa" id="contact-wa-link">
+          <div class="ci-icon ci-icon-wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.15 0-.38.05-.58.28-.2.22-.76.74-.76 1.8 0 1.07.78 2.1 1.09 2.29.11.08 1.54 2.35 3.73 3.3.52.23.93.36 1.25.46.52.17 1 .14 1.38.09.42-.06 1.3-.53 1.48-1.04.19-.52.19-.96.13-1.05-.06-.09-.22-.15-.46-.27-.24-.11-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42l-.47-.01z"/></svg>
           </div>
-          <div><span class="ci-label">Location</span><span class="ci-val">Sunbury &amp; Melbourne, VIC, Australia</span></div>
-        </div>
-        <div class="contact-item">
+          <div><span class="ci-label">WhatsApp</span><span class="ci-val">Chat on WhatsApp (+61 432 072 008)</span></div>
+        </a>
+
+        <a href="mailto:gillengineeringlimited@gmail.com" class="contact-item" id="contact-email-link">
           <div class="ci-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <div><span class="ci-label">Emergency</span><span class="ci-val">24/7 Emergency Response Available</span></div>
+          <div><span class="ci-label">Email Us</span><span class="ci-val">gillengineeringlimited@gmail.com</span></div>
+        </a>
+
+        <div class="contact-item contact-hours-box">
+          <div class="ci-icon ci-icon-hours">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div><span class="ci-label">Opening Hours</span><span class="ci-val"><strong>Mon &ndash; Sun: 7:00 AM &ndash; 7:00 PM</strong><br><small style="color:var(--orange);font-weight:700">7 Days A Week &middot; 24/7 Emergency Response</small></span></div>
         </div>
+
+        <a href="https://www.linkedin.com/in/kiranbir-singh-gill-395b71111" target="_blank" rel="noopener noreferrer" class="contact-item contact-li" id="contact-linkedin-link">
+          <div class="ci-icon ci-icon-li">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.88c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63z"/></svg>
+          </div>
+          <div><span class="ci-label">LinkedIn</span><span class="ci-val">Kiranbir Singh Gill Profile</span></div>
+        </a>
+
         <div class="contact-item">
           <div class="ci-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div><span class="ci-label">Service Area</span><span class="ci-val">Melbourne · Sunbury · Macedon Ranges · All VIC</span></div>
         </div>
@@ -575,12 +693,14 @@
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
-      </div>
+      <img src="logo.png" alt="Gill Engineering Works Logo" class="footer-logo-img" />
       <div>
         <span class="footer-name">Gill Engineering Works</span>
-        <span class="footer-tagline">Quality Repairs. Every Weld Counts.</span>
+        <span class="footer-tagline">“We Do It Once, And We Do It Right”</span>
+        <div class="footer-hours-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Mon – Sun: 7:00 AM – 7:00 PM
+        </div>
       </div>
     </div>
     <div class="footer-links">
@@ -591,11 +711,24 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="footer-contact">
-      <a href="tel:+61432072008" class="footer-phone" id="footer-phone-link">+61 432 072 008</a>
-      <span>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Sunbury &amp; Melbourne, VIC, Australia
-      </span>
+      <a href="tel:+61432072008" class="footer-phone" id="footer-phone-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
+        +61 432 072 008
+      </a>
+      <a href="mailto:gillengineeringlimited@gmail.com" class="footer-email">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        gillengineeringlimited@gmail.com
+      </a>
+      <div class="footer-social-row">
+        <a href="https://wa.me/61432072008" target="_blank" rel="noopener noreferrer" class="footer-social-btn footer-wa" title="Chat on WhatsApp (+61 432 072 008)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.15 0-.38.05-.58.28-.2.22-.76.74-.76 1.8 0 1.07.78 2.1 1.09 2.29.11.08 1.54 2.35 3.73 3.3.52.23.93.36 1.25.46.52.17 1 .14 1.38.09.42-.06 1.3-.53 1.48-1.04.19-.52.19-.96.13-1.05-.06-.09-.22-.15-.46-.27-.24-.11-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42l-.47-.01z"/></svg>
+          WhatsApp Chat
+        </a>
+        <a href="https://www.linkedin.com/in/kiranbir-singh-gill-395b71111" target="_blank" rel="noopener noreferrer" class="footer-social-btn footer-li" title="Connect on LinkedIn with Kiranbir Singh Gill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.88c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63z"/></svg>
+          LinkedIn (Kiranbir)
+        </a>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
@@ -605,11 +738,17 @@
   </div>
 </footer>
 
-<!-- Floating Call Button -->
-<a href="tel:+61432072008" class="fab-call" id="fab-call-btn" aria-label="Call Gill Engineering Works">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
-  <span class="fab-label">Call Now</span>
-</a>
+<!-- Floating Dual Action Buttons (WhatsApp + Call) -->
+<div class="fab-stack" id="fab-stack">
+  <a href="https://wa.me/61432072008" target="_blank" rel="noopener noreferrer" class="fab-btn fab-wa" id="fab-wa-btn" aria-label="Chat on WhatsApp (+61 432 072 008)">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.15 0-.38.05-.58.28-.2.22-.76.74-.76 1.8 0 1.07.78 2.1 1.09 2.29.11.08 1.54 2.35 3.73 3.3.52.23.93.36 1.25.46.52.17 1 .14 1.38.09.42-.06 1.3-.53 1.48-1.04.19-.52.19-.96.13-1.05-.06-.09-.22-.15-.46-.27-.24-.11-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42l-.47-.01z"/></svg>
+    <span class="fab-label">WhatsApp</span>
+  </a>
+  <a href="tel:+61432072008" class="fab-btn fab-call" id="fab-call-btn" aria-label="Call Gill Engineering Works (+61 432 072 008)">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
+    <span class="fab-label">Call Now</span>
+  </a>
+</div>
 
 <script src="main.js"></script>
 </body>

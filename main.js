@@ -226,5 +226,5 @@ form?.querySelectorAll('input').forEach(inp => {
 
 /* ─── NAV ACTIVE STYLE ─── */
 const navStyle = document.createElement('style');
-navStyle.textContent = `.nav-link.active { color: #fff !important; }`;
+navStyle.textContent = `.nav-link.active { color: var(--orange) !important; background: var(--orange-light) !important; }`;
 document.head.appendChild(navStyle);
