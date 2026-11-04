@@ -514,43 +514,31 @@ document.head.appendChild(navStyle);
 })();
 
 /* ══════════════════════════════════════════════════════════════
-   3. 60-SECOND PROJECT SCOPE & WHATSAPP ESTIMATOR
+   3. PRIORITY SCHEDULING & DIRECT WHATSAPP DISPATCH
 ══════════════════════════════════════════════════════════════ */
-(function initProjectScopeEstimator() {
+(function initPriorityScheduling() {
   const estimatorSection = document.getElementById('estimator');
   if (!estimatorSection) return;
 
-  const serviceBtns = estimatorSection.querySelectorAll('.est-options-grid[data-group="service"] .est-opt-btn');
-  const scaleBtns   = estimatorSection.querySelectorAll('.est-options-grid[data-group="scale"] .est-opt-btn');
-  const urgencyBtns = estimatorSection.querySelectorAll('.est-options-grid[data-group="urgency"] .est-opt-btn');
-
-  const summaryService    = document.getElementById('summary-service');
-  const summaryScale      = document.getElementById('summary-scale');
-  const summaryTurnaround = document.getElementById('summary-turnaround');
+  const urgencyBtns       = estimatorSection.querySelectorAll('.est-options-grid[data-group="urgency"] .est-opt-btn');
   const summaryUrgency    = document.getElementById('summary-urgency');
+  const summaryCommitment = document.getElementById('summary-commitment');
   const waSendBtn         = document.getElementById('est-wa-send-btn');
 
-  let currentService    = 'Trailer Floor & Body Repair';
-  let currentScale      = 'Minor Repair / Single Component';
-  let currentTurnaround = 'Same-Day or 24-48 Hours';
   let currentUrgency    = '⚡ Urgent (24–48 hrs)';
+  let currentCommitment = 'Fast-Tracked Workshop Slot (Within 48h)';
 
   function updateEstimatorWhatsAppLink() {
-    if (summaryService)    summaryService.textContent    = currentService;
-    if (summaryScale)      summaryScale.textContent      = currentScale;
-    if (summaryTurnaround) summaryTurnaround.textContent = currentTurnaround;
     if (summaryUrgency)    summaryUrgency.textContent    = currentUrgency;
+    if (summaryCommitment) summaryCommitment.textContent = currentCommitment;
 
     const message = [
-      `Hello Kiranbir, I just configured my steel project on gillengineeringworks.com.au:`,
+      `Hello Kiranbir, I would like to book a priority steel / welding service via gillengineeringworks.com.au:`,
       ``,
-      `🔧 *Category:* ${currentService}`,
-      `📐 *Scope / Scale:* ${currentScale}`,
-      `⏱️ *Expected Turnaround:* ${currentTurnaround}`,
-      `🚨 *Priority:* ${currentUrgency}`,
+      `🚨 *Priority Timeline:* ${currentUrgency}`,
+      `⏱️ *Response Commitment:* ${currentCommitment}`,
       ``,
-      `Could you please review this scope and provide an estimated quote & turnaround?`,
-      `Thank you!`
+      `Please let me know your earliest opening / dispatch time. Thank you!`
     ].join('\n');
 
     if (waSendBtn) {
@@ -558,28 +546,14 @@ document.head.appendChild(navStyle);
     }
   }
 
-  function bindGroup(buttons, callback) {
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        callback(btn);
-        updateEstimatorWhatsAppLink();
-      });
+  urgencyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      urgencyBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentUrgency    = btn.getAttribute('data-val') || btn.querySelector('.est-opt-title')?.textContent || currentUrgency;
+      currentCommitment = btn.getAttribute('data-commitment') || 'Fast-Tracked Booking';
+      updateEstimatorWhatsAppLink();
     });
-  }
-
-  bindGroup(serviceBtns, btn => {
-    currentService = btn.getAttribute('data-val') || btn.querySelector('.est-opt-title')?.textContent || currentService;
-  });
-
-  bindGroup(scaleBtns, btn => {
-    currentScale      = btn.getAttribute('data-val') || btn.querySelector('.est-opt-title')?.textContent || currentScale;
-    currentTurnaround = btn.getAttribute('data-turnaround') || '2 to 4 Working Days';
-  });
-
-  bindGroup(urgencyBtns, btn => {
-    currentUrgency = btn.getAttribute('data-val') || btn.querySelector('.est-opt-title')?.textContent || currentUrgency;
   });
 
   // Initial trigger
