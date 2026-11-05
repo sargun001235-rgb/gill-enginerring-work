@@ -63,7 +63,7 @@ svg { flex-shrink: 0; }
 
   --r:             12px;
   --r-lg:          18px;
-  --nav-h:         114px;
+  --nav-h:         126px;
   --ease:          0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -192,33 +192,41 @@ section[id], div[id] { scroll-margin-top: calc(var(--nav-h) + 20px); }
 
 /* Main Nav Header */
 .nav-header {
-  height: 76px;
-  background: rgba(10, 14, 28, 0.9);
+  height: 88px;
+  background: rgba(10, 14, 28, 0.92);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background var(--ease), box-shadow var(--ease);
+  transition: background var(--ease), box-shadow var(--ease), height var(--ease);
 }
 .site-header.scrolled .nav-header {
+  height: 80px;
   background: rgba(8, 11, 24, 0.98);
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
 
 /* Brand Logo (Enlarged & Prominent) */
-.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; flex-shrink: 0; }
 .nav-logo-img {
-  width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
-  background: #ffffff; padding: 1px;
-  border: 2px solid rgba(56, 189, 248, 0.45);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-  transition: transform var(--ease), box-shadow var(--ease);
+  width: 74px; height: 74px; border-radius: 50%; object-fit: cover;
+  background: #ffffff; padding: 2px;
+  border: 2.5px solid rgba(56, 189, 248, 0.65);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 16px rgba(56, 189, 248, 0.3);
+  transition: transform var(--ease), box-shadow var(--ease), width var(--ease), height var(--ease);
 }
-.nav-logo:hover .nav-logo-img { transform: scale(1.05); box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45); }
+.site-header.scrolled .nav-logo-img {
+  width: 66px; height: 66px;
+}
+.nav-logo:hover .nav-logo-img {
+  transform: scale(1.06);
+  box-shadow: 0 6px 26px rgba(56, 189, 248, 0.65);
+  border-color: #38bdf8;
+}
 .logo-text { display: flex; align-items: center; white-space: nowrap; }
 .logo-name {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: #ffffff;
   letter-spacing: -0.01em;
   white-space: nowrap;
@@ -927,14 +935,14 @@ a.contact-li .ci-val { color: #0284c7; }
   display: flex; align-items: center; justify-content: space-between;
   gap: 24px; padding: 44px 24px; flex-wrap: wrap;
 }
-.footer-brand { display: flex; align-items: center; gap: 16px; }
+.footer-brand { display: flex; align-items: center; gap: 18px; }
 .footer-logo-img {
-  width: 58px; height: 58px; border-radius: 50%; object-fit: cover;
-  background: #ffffff; padding: 1px;
-  border: 2px solid rgba(56, 189, 248, 0.45);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  width: 84px; height: 84px; border-radius: 50%; object-fit: cover;
+  background: #ffffff; padding: 2px;
+  border: 2.5px solid rgba(56, 189, 248, 0.55);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
-.footer-name { display: block; font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem; color: #ffffff; }
+.footer-name { display: block; font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.4rem; color: #ffffff; }
 .footer-tagline { display: block; font-size: 0.86rem; color: #7dd3fc; margin-top: 3px; font-weight: 600; font-style: italic; }
 .footer-hours-badge {
   display: inline-flex; align-items: center; gap: 6px;
@@ -1033,15 +1041,16 @@ a.contact-li .ci-val { color: #0284c7; }
 
 /* Mobile Breakpoint (≤ 768px) */
 @media (max-width: 768px) {
-  :root { --nav-h: 76px; }
+  :root { --nav-h: 90px; }
   .top-bar { display: none; }
   .section { padding: 68px 0; }
 
   /* Nav */
+  .nav-header { height: 90px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .nav-logo-img { width: 44px; height: 44px; }
-  .logo-name { font-size: 1.05rem; }
+  .nav-logo-img { width: 66px; height: 66px; }
+  .logo-name { font-size: 1.15rem; }
 
   /* Hero */
   .hero { min-height: auto; padding-top: var(--nav-h); }
@@ -1103,6 +1112,10 @@ a.contact-li .ci-val { color: #0284c7; }
 
 /* Small mobile (≤ 480px) */
 @media (max-width: 480px) {
+  :root { --nav-h: 84px; }
+  .nav-header { height: 84px; }
+  .nav-logo-img { width: 58px; height: 58px; }
+  .logo-name { font-size: 1.02rem; }
   .hero-title { font-size: 1.95rem; }
   .hero-motto-badge { font-size: 0.8rem; padding: 5px 12px; }
   .hero-stats { gap: 14px 10px; padding: 18px 12px; }
