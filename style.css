@@ -207,9 +207,9 @@ section[id], div[id] { scroll-margin-top: calc(var(--nav-h) + 20px); }
 /* Brand Logo (Enlarged & Prominent) */
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
 .nav-logo-img {
-  width: 52px; height: 52px; border-radius: 12px; object-fit: contain;
-  background: #ffffff; padding: 2px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
+  background: #ffffff; padding: 1px;
+  border: 2px solid rgba(56, 189, 248, 0.45);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   transition: transform var(--ease), box-shadow var(--ease);
 }
@@ -929,9 +929,9 @@ a.contact-li .ci-val { color: #0284c7; }
 }
 .footer-brand { display: flex; align-items: center; gap: 16px; }
 .footer-logo-img {
-  width: 58px; height: 58px; border-radius: 12px; object-fit: contain;
-  background: #ffffff; padding: 2px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  width: 58px; height: 58px; border-radius: 50%; object-fit: cover;
+  background: #ffffff; padding: 1px;
+  border: 2px solid rgba(56, 189, 248, 0.45);
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
 .footer-name { display: block; font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem; color: #ffffff; }
