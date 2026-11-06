@@ -57,8 +57,42 @@
       </a>
 
       <nav class="nav-links" id="nav-links">
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#about" class="nav-link">About</a>
+        <div class="nav-dropdown-wrap">
+          <a href="#services" class="nav-link nav-has-dropdown">
+            <span>Services</span>
+            <svg class="nav-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="#svc-trailer" class="nav-drop-item hot-item" data-service="skid-plate">
+              <span class="drop-dot hot"></span>
+              <div class="drop-text">
+                <span class="drop-title">SKID Plate Replacement</span>
+                <span class="drop-badge">Most Popular</span>
+              </div>
+            </a>
+            <a href="#svc-welding" class="nav-drop-item" data-service="welding">
+              <span class="drop-dot"></span>
+              <div class="drop-text"><span class="drop-title">Welding &amp; Fabrication</span></div>
+            </a>
+            <a href="#svc-fabrication" class="nav-drop-item" data-service="custom-engineering">
+              <span class="drop-dot"></span>
+              <div class="drop-text"><span class="drop-title">Custom Engineering &amp; Welding</span></div>
+            </a>
+            <a href="#svc-residential" class="nav-drop-item" data-service="residential">
+              <span class="drop-dot"></span>
+              <div class="drop-text"><span class="drop-title">Residential &amp; Commercial Steel</span></div>
+            </a>
+            <a href="#svc-machinery" class="nav-drop-item" data-service="machinery">
+              <span class="drop-dot"></span>
+              <div class="drop-text"><span class="drop-title">Earthwork Machinery Repair</span></div>
+            </a>
+            <a href="#svc-truck" class="nav-drop-item" data-service="truck-trailer">
+              <span class="drop-dot"></span>
+              <div class="drop-text"><span class="drop-title">Truck &amp; Trailer Body Repair</span></div>
+            </a>
+          </div>
+        </div>
+        <a href="#about" class="nav-link">About Us</a>
         <a href="#work" class="nav-link">Our Work</a>
         <a href="#estimator" class="nav-link">Book Appointment</a>
         <a href="#testimonials" class="nav-link">Reviews</a>
@@ -90,8 +124,16 @@
           <a href="mailto:gillengineeringlimited@gmail.com">gillengineeringlimited@gmail.com</a>
         </div>
       </div>
-      <a href="#services" class="mob-link">Services</a>
-      <a href="#about" class="mob-link">About</a>
+      <a href="#services" class="mob-link mob-services-head">Core Services:</a>
+      <div class="mob-sub-services">
+        <a href="#svc-trailer" class="mob-sub-link mob-hot" data-service="skid-plate">⚡ SKID Plate Replacement <span class="mob-badge">Popular</span></a>
+        <a href="#svc-welding" class="mob-sub-link" data-service="welding">Welding &amp; Fabrication</a>
+        <a href="#svc-fabrication" class="mob-sub-link" data-service="custom-engineering">Custom Engineering &amp; Welding</a>
+        <a href="#svc-residential" class="mob-sub-link" data-service="residential">Residential &amp; Commercial Steel</a>
+        <a href="#svc-machinery" class="mob-sub-link" data-service="machinery">Earthwork Machinery Repair</a>
+        <a href="#svc-truck" class="mob-sub-link" data-service="truck-trailer">Truck &amp; Trailer Body Repair</a>
+      </div>
+      <a href="#about" class="mob-link">About Us</a>
       <a href="#work" class="mob-link">Our Work</a>
       <a href="#estimator" class="mob-link">Book Appointment</a>
       <a href="#testimonials" class="mob-link">Reviews</a>
@@ -252,7 +294,7 @@
     </div>
     <div class="services-grid">
 
-      <div class="service-card reveal" id="svc-welding">
+      <div class="service-card reveal" id="svc-welding" data-service="welding" role="button" tabindex="0" aria-label="Open Welding &amp; Fabrication details">
         <div class="svc-icon-wrap">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
@@ -262,12 +304,18 @@
             <circle cx="34" cy="15" r="1.5" fill="#38bdf8"/>
           </svg>
         </div>
-        <h3>Welding &amp; Steel Fabrication</h3>
+        <h3 class="svc-card-title">Welding &amp; Fabrication</h3>
         <p>MIG, TIG and arc welding for structural, residential and commercial steel. Custom fabrication to exact specifications.</p>
-        <div class="svc-tags"><span>Structural</span><span>Custom</span><span>All Steel Types</span></div>
+        <div class="svc-tags"><span>MIG / TIG / Arc</span><span>Structural</span><span>All Steel Types</span></div>
+        <div class="svc-card-footer">
+          <span class="svc-open-label">Open Details &amp; Book</span>
+          <span class="svc-arrow-btn" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
       </div>
 
-      <div class="service-card featured reveal" id="svc-trailer">
+      <div class="service-card featured reveal" id="svc-trailer" data-service="skid-plate" role="button" tabindex="0" aria-label="Open SKID Plate Replacement details">
         <div class="svc-badge">Most Popular</div>
         <div class="svc-icon-wrap">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -283,12 +331,63 @@
             <line x1="26" y1="20" x2="29" y2="26" stroke="#0284c7" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Trailer Floor &amp; Body Repair</h3>
-        <p>Full trailer floor restoration, bumper reconstruction, body repairs, and SKID plate replacement using high-grade steel.</p>
-        <div class="svc-tags"><span>Trailer Floors</span><span>Bumper Rebuild</span><span>SKID Plates</span></div>
+        <h3 class="svc-card-title">SKID Plate Replacement</h3>
+        <p>Full trailer floor restoration, bumper reconstruction, body repairs, and heavy-duty SKID plate replacement using high-grade ISO steel.</p>
+        <div class="svc-tags"><span>SKID Plates</span><span>Wear Plates</span><span>Trailer Floors</span></div>
+        <div class="svc-card-footer">
+          <span class="svc-open-label">Open Details &amp; Book</span>
+          <span class="svc-arrow-btn" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
       </div>
 
-      <div class="service-card reveal" id="svc-machinery">
+      <div class="service-card reveal" id="svc-fabrication" data-service="custom-engineering" role="button" tabindex="0" aria-label="Open Custom Engineering &amp; Welding details">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
+            <circle cx="24" cy="13" r="3" stroke="#2563eb" stroke-width="2"/>
+            <path d="M21.5 15.5L13 36M26.5 15.5L35 36" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M17 27C21 28.5 27 28.5 31 27" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="24" y1="25" x2="24" y2="29" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="12" y1="36" x2="15" y2="36" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+            <line x1="33" y1="36" x2="36" y2="36" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="svc-card-title">Custom Engineering &amp; Welding</h3>
+        <p>One-off and production-run custom metal parts, brackets, frames, platforms, and structural components to your exact design.</p>
+        <div class="svc-tags"><span>Bespoke Designs</span><span>Precision CAD</span><span>All Metals</span></div>
+        <div class="svc-card-footer">
+          <span class="svc-open-label">Open Details &amp; Book</span>
+          <span class="svc-arrow-btn" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="service-card reveal" id="svc-residential" data-service="residential" role="button" tabindex="0" aria-label="Open Residential &amp; Commercial Steel details">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
+            <path d="M12 36V14M36 36V14" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M10 14H38M10 36H38" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M12 14L24 25L36 14" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 36L24 25L36 36" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="24" cy="25" r="2" fill="#38bdf8"/>
+          </svg>
+        </div>
+        <h3 class="svc-card-title">Residential &amp; Commercial Steel</h3>
+        <p>Gates, fences, handrails, staircases, canopies, carports, and structural steelwork for homes and commercial premises.</p>
+        <div class="svc-tags"><span>Gates &amp; Fences</span><span>Handrails</span><span>Canopies</span></div>
+        <div class="svc-card-footer">
+          <span class="svc-open-label">Open Details &amp; Book</span>
+          <span class="svc-arrow-btn" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="service-card reveal" id="svc-machinery" data-service="machinery" role="button" tabindex="0" aria-label="Open Earthwork Machinery Repair details">
         <div class="svc-icon-wrap">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
@@ -304,45 +403,18 @@
             <line x1="31" y1="36" x2="31" y2="39" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Earthwork Machinery Repair</h3>
+        <h3 class="svc-card-title">Earthwork Machinery Repair</h3>
         <p>Structural repair and welding on excavators, loaders, scrapers, and all earthmoving equipment. Keep your fleet operational.</p>
         <div class="svc-tags"><span>Excavators</span><span>Loaders</span><span>Agricultural</span></div>
-      </div>
-
-      <div class="service-card reveal" id="svc-residential">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
-            <path d="M12 36V14M36 36V14" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M10 14H38M10 36H38" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M12 14L24 25L36 14" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 36L24 25L36 36" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="24" cy="25" r="2" fill="#38bdf8"/>
-          </svg>
+        <div class="svc-card-footer">
+          <span class="svc-open-label">Open Details &amp; Book</span>
+          <span class="svc-arrow-btn" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
         </div>
-        <h3>Residential &amp; Commercial Steel</h3>
-        <p>Gates, fences, handrails, staircases, canopies, carports, and structural steelwork for homes and commercial premises.</p>
-        <div class="svc-tags"><span>Gates &amp; Fences</span><span>Handrails</span><span>Canopies</span></div>
       </div>
 
-      <div class="service-card reveal" id="svc-fabrication">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
-            <circle cx="24" cy="13" r="3" stroke="#2563eb" stroke-width="2"/>
-            <path d="M21.5 15.5L13 36M26.5 15.5L35 36" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M17 27C21 28.5 27 28.5 31 27" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="24" y1="25" x2="24" y2="29" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="12" y1="36" x2="15" y2="36" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
-            <line x1="33" y1="36" x2="36" y2="36" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Custom Fabrication</h3>
-        <p>One-off and production-run custom metal parts, brackets, frames, platforms, and structural components to your exact design.</p>
-        <div class="svc-tags"><span>Bespoke Designs</span><span>Precision</span><span>All Metals</span></div>
-      </div>
-
-      <div class="service-card reveal" id="svc-truck">
+      <div class="service-card reveal" id="svc-truck" data-service="truck-trailer" role="button" tabindex="0" aria-label="Open Truck &amp; Trailer Body Repair details">
         <div class="svc-icon-wrap">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="24" cy="24" r="22" fill="#2563eb" fill-opacity="0.12"/>
@@ -357,9 +429,15 @@
             <circle cx="36" cy="34" r="1" fill="#2563eb"/>
           </svg>
         </div>
-        <h3>Truck &amp; Trailer Body Repair</h3>
+        <h3 class="svc-card-title">Truck &amp; Trailer Body Repair</h3>
         <p>Full structural body repairs for heavy trucks, semi-trailers, and tip-trucks. Container canopies and underbridge grills.</p>
         <div class="svc-tags"><span>Semi-Trailers</span><span>Tip Trucks</span><span>Canopies</span></div>
+        <div class="svc-card-footer">
+          <span class="svc-open-label">Open Details &amp; Book</span>
+          <span class="svc-arrow-btn" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
       </div>
 
     </div>
@@ -842,14 +920,13 @@
             <label for="f-service">Service Required</label>
             <select id="f-service" name="service">
               <option value="" disabled selected>Select a service…</option>
-              <option>Welding &amp; Steel Fabrication</option>
-              <option>Trailer Floor &amp; Body Repair</option>
-              <option>Earthwork Machinery Repair</option>
-              <option>Residential &amp; Commercial Steel</option>
-              <option>Custom Fabrication</option>
-              <option>Truck &amp; Trailer Repair</option>
-              <option>SKID Plate Replacement</option>
-              <option>Other / Not Sure</option>
+              <option value="SKID Plate Replacement">SKID Plate Replacement (Most Popular)</option>
+              <option value="Welding & Fabrication">Welding &amp; Fabrication</option>
+              <option value="Custom Engineering & Welding">Custom Engineering &amp; Welding</option>
+              <option value="Residential & Commercial Steel">Residential &amp; Commercial Steel</option>
+              <option value="Earthwork Machinery Repair">Earthwork Machinery Repair</option>
+              <option value="Truck & Trailer Body Repair">Truck &amp; Trailer Body Repair</option>
+              <option value="Other / Urgent Custom Request">Other / Urgent Custom Request</option>
             </select>
           </div>
           <div class="fg">
@@ -926,6 +1003,46 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57A1 1 0 0121 16.5V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.6 1 1 0 01-.25 1.01z"/></svg>
     <span class="fab-label">Call Now</span>
   </a>
+</div>
+
+<!-- ═══════════════════════════ SERVICE DETAILS MODAL ═══════════════════════════ -->
+<div class="svc-modal-backdrop" id="svc-modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="svc-modal-dialog">
+    <button type="button" class="svc-modal-close" id="svc-modal-close" aria-label="Close details modal">&times;</button>
+    <div class="svc-modal-header">
+      <div class="svc-modal-icon-wrap" id="modal-svc-icon"></div>
+      <div class="svc-modal-title-box">
+        <span class="svc-modal-badge" id="modal-svc-badge">Specialist Engineering Service</span>
+        <h3 class="svc-modal-title" id="modal-svc-title">SKID Plate Replacement</h3>
+      </div>
+    </div>
+    <div class="svc-modal-body">
+      <p class="svc-modal-desc" id="modal-svc-desc"></p>
+      
+      <div class="svc-modal-specs">
+        <h4 class="svc-specs-heading">Key Capabilities &amp; Specifications:</h4>
+        <ul id="modal-svc-specs-list" class="svc-specs-list"></ul>
+      </div>
+
+      <div class="svc-modal-callout">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div>
+          <strong>AS/NZS Certified &bull; ISO Standard Steel &bull; Melbourne &amp; Sunbury VIC</strong>
+          <p>Backed by our guarantee: <em>"We do it once, and we do it right."</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="svc-modal-footer">
+      <a href="https://wa.me/61432072008" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp modal-btn-wa" id="modal-svc-wa-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.15 0-.38.05-.58.28-.2.22-.76.74-.76 1.8 0 1.07.78 2.1 1.09 2.29.11.08 1.54 2.35 3.73 3.3.52.23.93.36 1.25.46.52.17 1 .14 1.38.09.42-.06 1.3-.53 1.48-1.04.19-.52.19-.96.13-1.05-.06-.09-.22-.15-.46-.27-.24-.11-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.55-.42l-.47-.01z"/></svg>
+        <span>Instant WhatsApp Quote</span>
+      </a>
+      <button type="button" class="btn btn-primary modal-btn-book" id="modal-svc-book-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+        <span>Book This Service &rarr;</span>
+      </button>
+    </div>
+  </div>
 </div>
 
 <script src="main.js"></script>

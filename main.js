@@ -559,3 +559,225 @@ document.head.appendChild(navStyle);
   // Initial trigger
   updateEstimatorWhatsAppLink();
 })();
+
+/* ══════════════════════════════════════════════════════════════
+   4. INTERACTIVE SERVICE DETAILS MODAL CONTROLLER
+   Supports full details popup, direct WhatsApp quotes & booking
+══════════════════════════════════════════════════════════════ */
+(function initServiceModal() {
+  const modal     = document.getElementById('svc-modal');
+  const closeBtn  = document.getElementById('svc-modal-close');
+  const iconWrap  = document.getElementById('modal-svc-icon');
+  const badgeEl   = document.getElementById('modal-svc-badge');
+  const titleEl   = document.getElementById('modal-svc-title');
+  const descEl    = document.getElementById('modal-svc-desc');
+  const specsList = document.getElementById('modal-svc-specs-list');
+  const waBtn     = document.getElementById('modal-svc-wa-btn');
+  const bookBtn   = document.getElementById('modal-svc-book-btn');
+
+  if (!modal || !closeBtn) return;
+
+  const servicesData = {
+    'skid-plate': {
+      title: 'SKID Plate Replacement',
+      badge: '★ Most Popular Specialist Service',
+      desc: 'Specialised heavy-duty SKID plate replacement and chassis reinforcement for trailers, earthmoving equipment, tip trucks, and 4WD transport fleets across Melbourne and Sunbury. We use certified high-yield abrasion-resistant steel (Hardox 450/500 equivalent) to guarantee zero recurrent failure under extreme Australian road and quarry conditions.',
+      specs: [
+        'Hardox 450/500 High-Yield Abrasion-Resistant Steel Plates',
+        'Full Excavation of Fractured Underbody & Chassis Mounting Points',
+        'Precision V-Groove Root Welding & AS/NZS Structural Certification',
+        'Trailer Floor Restoration, Bumper Rebuild & Wear Strip Lamination',
+        'Workshop Fitting or On-Site Mobile Welding Rig Dispatch',
+        '100% Penetration Weld Tested — "We Do It Once, And We Do It Right"'
+      ],
+      formValue: 'SKID Plate Replacement'
+    },
+    'welding': {
+      title: 'Welding & Fabrication',
+      badge: 'Certified AS/NZS Standards',
+      desc: 'Expert structural and precision welding for commercial builders, industrial facilities, and transport operators. Certified in MIG, TIG, and arc welding for mild steel, structural beams, high-tensile alloys, stainless steel, and aluminium.',
+      specs: [
+        'MIG, TIG, and Stick/Arc Welding to AS/NZS 1554 Structural Standards',
+        'Heavy Structural Columns, Beams, Trusses & Base Plates',
+        'Non-Destructive Weld Inspection (NDT) & Certified Clean Finishes',
+        'Mobile On-Site Emergency Welding Rig with Generator Setup',
+        'Strict ISO Standards & Full Traceability on All Base Metals'
+      ],
+      formValue: 'Welding & Fabrication'
+    },
+    'custom-engineering': {
+      title: 'Custom Engineering & Welding',
+      badge: 'Bespoke Technical Solutions',
+      desc: 'Bespoke metal design, CAD-assisted custom engineering, and heavy metal fabrication. From one-off prototype brackets to production-run industrial frames, underbridge culvert grills, access platforms, and heavy equipment attachments.',
+      specs: [
+        'Custom Engineering Design & CAD-to-Steel Precision Alignment',
+        'Underbridge Culvert Grills, Stormwater Gates & Security Platforms',
+        'Heavy Machinery Attachments, Buckets, Brackets & Pivot Points',
+        'Stainless Steel, Mild Steel & Aluminium Plate Fabrication',
+        'High-Tolerance CNC Profile Cutting, Drilling, Tapping & Press Bending'
+      ],
+      formValue: 'Custom Engineering & Welding'
+    },
+    'residential': {
+      title: 'Residential & Commercial Steel',
+      badge: 'Architectural & Structural Steel',
+      desc: 'Custom architectural and structural steel installations for residential homebuilders, commercial premises, and property developers. Built for structural durability and pristine finishes with hot-dip galvanising and powder coating.',
+      specs: [
+        'Architectural Stainless Steel & Mild Steel Handrails and Balustrades',
+        'Automated & Manual Security Gates, Heavy Boundary Fencing',
+        'Structural Steel Carports, Canopies, Pergolas & Awning Frameworks',
+        'Internal & External Spiral/Straight Steel Staircases and Stringers',
+        'Hot-Dip Galvanised & UV-Resistant Architectural Powder Coating'
+      ],
+      formValue: 'Residential & Commercial Steel'
+    },
+    'machinery': {
+      title: 'Earthwork Machinery Repair',
+      badge: '24/7 Heavy Equipment Support',
+      desc: 'Heavy equipment rebuilds and structural repairs for civil construction, earthmoving, and agricultural machinery. Fast turnaround to minimize costly fleet downtime on jobsites across Melbourne and regional Victoria.',
+      specs: [
+        'Excavator Booms, Dipper Arms & Bucket Hard-Facing Repairs',
+        'Bulldozer Blades, Scraper Bowls & Loader Bucket Re-Skinning',
+        'Cracked Chassis Re-alignment, Gusset Plates & Stress Relieving',
+        'Pivot Boss Bore Buildup & Line Boring Preparation',
+        '24/7 Urgent Site Dispatch Across Melbourne & Macedon Ranges'
+      ],
+      formValue: 'Earthwork Machinery Repair'
+    },
+    'truck-trailer': {
+      title: 'Truck & Trailer Body Repair',
+      badge: 'Heavy Transport Fleet Specialists',
+      desc: 'Full structural body restoration and fabrication for tip-trucks, semi-trailers, dog trailers, and heavy haulage transport fleets. Certified heavy vehicle body modifications and chassis rust/fracture repairs.',
+      specs: [
+        'Tipper Body Relining, Subframe Crack Repairs & Tailgate Rebuilds',
+        'Semi-Trailer Rear Bumper Reconstruction & Underrun Protections',
+        'Curtain-Sider Roof Track Alignment & Pillar Replacements',
+        'Chassis Web Fractures, Tow Bar & Pintle Hook Structural Mounts',
+        'Fast Fleet Turnaround to Get Trucks Back on Australian Highways'
+      ],
+      formValue: 'Truck & Trailer Body Repair'
+    }
+  };
+
+  let currentKey = 'skid-plate';
+
+  function openModal(serviceKey) {
+    const data = servicesData[serviceKey] || servicesData['skid-plate'];
+    currentKey = serviceKey;
+
+    // Grab SVG icon from the corresponding card if available
+    const cardEl = document.querySelector(`.service-card[data-service="${serviceKey}"]`);
+    const svgIcon = cardEl ? cardEl.querySelector('.svc-icon-wrap')?.innerHTML : '';
+
+    if (iconWrap && svgIcon) iconWrap.innerHTML = svgIcon;
+    if (badgeEl) badgeEl.textContent = data.badge;
+    if (titleEl) titleEl.textContent = data.title;
+    if (descEl) descEl.textContent = data.desc;
+
+    if (specsList) {
+      specsList.innerHTML = data.specs.map(spec => `<li><span>${spec}</span></li>`).join('');
+    }
+
+    if (waBtn) {
+      const waMsg = [
+        `Hello Kiranbir, I would like to get a quote / book your service via gillengineeringworks.com.au:`,
+        ``,
+        `🛠️ *Service:* ${data.title}`,
+        `📍 *Location:* Melbourne / Sunbury VIC`,
+        ``,
+        `Please let me know your availability and pricing. Thank you!`
+      ].join('\n');
+      waBtn.href = `https://wa.me/61432072008?text=${encodeURIComponent(waMsg)}`;
+    }
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Click card to open
+  document.querySelectorAll('.service-card[data-service]').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('a')) return;
+      const key = card.getAttribute('data-service');
+      openModal(key);
+    });
+
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const key = card.getAttribute('data-service');
+        openModal(key);
+      }
+    });
+  });
+
+  // Nav dropdown items click to open
+  document.querySelectorAll('.nav-drop-item[data-service], .mob-sub-link[data-service]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const key = link.getAttribute('data-service');
+      
+      // Close mobile drawer if open
+      const drawer = document.getElementById('mobile-drawer');
+      const hamburger = document.getElementById('hamburger-btn');
+      if (drawer && drawer.classList.contains('open')) {
+        drawer.classList.remove('open');
+        hamburger?.classList.remove('open');
+        hamburger?.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+      }
+
+      // Scroll to services section
+      const targetCard = document.querySelector(`.service-card[data-service="${key}"]`);
+      if (targetCard) {
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      setTimeout(() => openModal(key), 350);
+    });
+  });
+
+  // Close handlers
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModal();
+  });
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  });
+
+  // Book button in modal
+  bookBtn?.addEventListener('click', () => {
+    closeModal();
+    const data = servicesData[currentKey] || servicesData['skid-plate'];
+    
+    // Auto-select in contact form
+    const serviceSelect = document.getElementById('f-service');
+    if (serviceSelect && data.formValue) {
+      serviceSelect.value = data.formValue;
+    }
+
+    // Scroll to contact form
+    const contactSec = document.getElementById('contact');
+    if (contactSec) {
+      contactSec.scrollIntoView({ behavior: 'smooth' });
+      const nameInput = document.getElementById('f-name');
+      if (nameInput) setTimeout(() => nameInput.focus(), 600);
+    }
+  });
+
+  // Check URL hash on load
+  const hash = window.location.hash.replace('#', '');
+  if (hash && (servicesData[hash] || hash.startsWith('svc-'))) {
+    const key = hash.replace('svc-', '');
+    const matchedKey = servicesData[key] ? key : 
+      (key === 'trailer' ? 'skid-plate' : (key === 'fabrication' ? 'custom-engineering' : null));
+    if (matchedKey) setTimeout(() => openModal(matchedKey), 500);
+  }
+})();
